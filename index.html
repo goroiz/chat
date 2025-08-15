@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WhatsApp Chat Viewer — Nanda & Broo Muksin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="avatar other">BM</div>
+    <div class="meta">
+      <h1>broo muksin</h1>
+      <div class="status">online • end-to-end encrypted</div>
+    </div>
+    <div class="actions">
+      <label class="btn" for="chatFile">Import .txt</label>
+      <input id="chatFile" type="file" accept=".txt" hidden />
+      <button id="scrollBottom" class="btn">Bottom</button>
+      <button id="toggleTheme" class="btn">🌗</button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <input id="meName" class="pill" placeholder="Nama kamu (default: nanda)" />
+    <input id="otherName" class="pill" placeholder="Nama lawan chat (default: broo muksin)" />
+    <input id="search" class="pill full" placeholder="Search messages..." />
+  </div>
+
+  <main id="chat"></main>
+
+  <footer class="composer">
+    <div class="hint">Drop file export WhatsApp ke sini atau klik “Import .txt”.</div>
+  </footer>
+
+  <template id="bubbleTpl">
+    <div class="msg">
+      <div class="msg-inner">
+        <div class="text"></div>
+        <div class="meta-line">
+          <span class="time"></span>
+          <span class="ticks">✓✓</span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

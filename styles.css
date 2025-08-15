@@ -1,0 +1,61 @@
+/* Simple WhatsApp-like UI */
+:root{
+  --bg:#0b141a;
+  --panel:#111b21;
+  --header:#202c33;
+  --incoming:#ffffff;
+  --outgoing:#d9fdd3;
+  --incoming-text:#111b21;
+  --outgoing-text:#111b21;
+  --date:#8696a0;
+  --pill:#2a3942;
+  --border:rgba(255,255,255,.08);
+  --shadow:0 2px 8px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg); color:#e9edef; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  display:flex; flex-direction:column;
+}
+.app-header{
+  position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:12px;
+  padding:10px 14px; background:var(--header); border-bottom:1px solid var(--border);
+}
+.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;}
+.avatar.other{background:#25d366;color:#0b141a}
+.meta h1{font-size:16px; margin:0 0 2px 0; font-weight:600}
+.status{font-size:12px; color:#aebac1}
+.actions{margin-left:auto; display:flex; gap:8px}
+.btn{background:var(--pill); border:1px solid var(--border); color:#e9edef; padding:8px 12px; border-radius:20px; cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.toolbar{display:flex; gap:8px; padding:10px 14px; background:var(--panel); border-bottom:1px solid var(--border)}
+.pill{flex:0 0 auto; background:var(--pill); color:#e9edef; border:1px solid var(--border); padding:10px 12px; border-radius:18px; outline:none}
+.pill.full{flex:1 1 auto}
+#chat{flex:1 1 auto; overflow:auto; background:
+  linear-gradient(rgba(255,255,255,.03),rgba(255,255,255,.03)),
+  url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><g fill=\"%232a3942\" opacity=\"0.35\"><circle cx=\"24\" cy=\"24\" r=\"2\"/><circle cx=\"64\" cy=\"64\" r=\"2\"/><circle cx=\"112\" cy=\"96\" r=\"2\"/></g></svg>');
+  background-size:auto,256px 256px;
+  padding:14px; display:flex; flex-direction:column; gap:8px;
+}
+.date-sep{align-self:center; background:#233138; color:#e9edef; font-size:12px; padding:6px 10px; border-radius:14px; border:1px solid var(--border); box-shadow:var(--shadow); opacity:.9; position:sticky; top:12px}
+.msg{max-width:min(80%, 720px); display:flex}
+.msg.me{align-self:flex-end}
+.msg .msg-inner{
+  background:var(--incoming); color:var(--incoming-text);
+  border-radius:10px; padding:8px 10px; box-shadow:var(--shadow); position:relative; border:1px solid rgba(0,0,0,.05)
+}
+.msg.me .msg-inner{ background:var(--outgoing); color:var(--outgoing-text) }
+.msg .text{white-space:pre-wrap; word-wrap:break-word; font-size:14.5px; line-height:1.4}
+.meta-line{display:flex; gap:6px; justify-content:flex-end; align-items:center; font-size:11px; color:#667781; margin-top:4px}
+.meta-line .ticks{opacity:.8}
+.badge{display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; background:#eff1f2; color:#3b4a54; border:1px solid #d1d7db; margin:2px 0}
+.msg.me .badge{background:#cdf0c9; border-color:#a9e6a1}
+.media{font-style:italic; opacity:.85}
+.composer{padding:10px 14px; background:var(--panel); border-top:1px solid var(--border); color:#aebac1; text-align:center}
+.highlight{outline:2px solid #ffd666; outline-offset:2px; border-radius:12px}
+/* Light theme */
+.light{
+  --bg:#ece5dd; --panel:#f0f2f5; --header:#ededed; --incoming:#ffffff; --outgoing:#dcf8c6;
+  --incoming-text:#111b21; --outgoing-text:#111b21; --date:#54656f; --pill:#ffffff; --border:rgba(0,0,0,.08);
+}
